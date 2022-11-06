@@ -35,10 +35,10 @@ const startGame = () => {
 
 const endGame = (isdraw) => {
      if (isdraw) {
-         winningMessageTextElement.innerText = 'Empate'
+         winningMessageTextElement.innerText = 'Empate!'
      } else {
-         winningMessageTextElement.innerText = isCircleTurn ?'O Venceu!' 
-         : 'X Venceu!';
+         winningMessageTextElement.innerText = isCircleTurn ?'O Venceu!!' 
+         : 'X Venceu!!';
      }
 
 winningMessage.classList.add("show-winning-message");
