@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo da velha para dois jogadores feito com HTML, CSS e JavaScript.">
   <link rel="stylesheet" href="./styles.css">
   <title>Jogo da Velha</title>
 </head>
 <body>
- <div class="board" data-board> 
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
- </div>
-  
-   <div class="winning-message" data-winning-message>
-       <p class="winning-message-text" data-winning-message-text>X Venceu!</p>
-       <button class="winning-message-button" data-restart-button>Reiniciar!</button>
-      </div>
+  <main class="game">
+    <h1 class="title">Jogo da Velha</h1>
+
+    <p class="turn" aria-live="polite">Vez de <span class="turn-symbol" data-turn>X</span></p>
+
+    <div class="board x" data-board role="group" aria-label="Tabuleiro">
+      <button class="cell" data-cell aria-label="Casa 1"></button>
+      <button class="cell" data-cell aria-label="Casa 2"></button>
+      <button class="cell" data-cell aria-label="Casa 3"></button>
+      <button class="cell" data-cell aria-label="Casa 4"></button>
+      <button class="cell" data-cell aria-label="Casa 5"></button>
+      <button class="cell" data-cell aria-label="Casa 6"></button>
+      <button class="cell" data-cell aria-label="Casa 7"></button>
+      <button class="cell" data-cell aria-label="Casa 8"></button>
+      <button class="cell" data-cell aria-label="Casa 9"></button>
+    </div>
+
+    <dl class="score" aria-label="Placar">
+      <div><dt>X</dt><dd data-score="x">0</dd></div>
+      <div><dt>Empates</dt><dd data-score="draw">0</dd></div>
+      <div><dt>O</dt><dd data-score="circle">0</dd></div>
+    </dl>
+  </main>
+
+  <div class="winning-message" data-winning-message role="dialog" aria-modal="true" aria-labelledby="winning-text">
+    <p class="winning-message-text" id="winning-text" data-winning-message-text></p>
+    <button class="winning-message-button" data-restart-button>Jogar de novo</button>
+  </div>
+
   <script src="./scripts.js"></script>
 </body>
 </html>
